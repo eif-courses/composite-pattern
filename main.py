@@ -47,11 +47,9 @@ if __name__ == '__main__':
     desktop = Folder("Desktop", [todo, screenshot])
 
     user = Folder("User", [desktop, documents])
-
     plans = File("secret.txt", 1000)
-
     user.add(plans)
 
-    print(f'{desktop.size()} bytes')
-    print(f'{user.size()} bytes')
-    print(f'{documents.size()} bytes')
+    components = [documents, desktop, user]
+    for component in components:
+        print(f'{component.size()} bytes')
